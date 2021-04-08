@@ -32,7 +32,7 @@
 		<div id="quicklinks" style="width: 100%;">			
 			<div class="class_container" >					
 				<div id="task_container"></div>
-				<input type="text" style="margin-top: .5rem; width: auto%;" placeholder="+ new todo or /clear" onchange="if(this.value == '/clear'){localStorage.clear()} else {update_local_storage(this.value, false);  add_task_to_display (this.value, false);} this.value = '';">
+				<input type="text" style="margin-top: .5rem; width: auto;" placeholder="+ new todo or /clear" onchange="if(this.value == '/clear'){localStorage.clear()} else {update_local_storage(this.value, false);  add_task_to_display (this.value, false);} this.value = '';">
 				<script>
 					onload_local_storage();
 				</script>
