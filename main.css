@@ -1,0 +1,96 @@
+html {
+	/* width: calc(100vw);
+	height: calc(100vh); */
+	/* background: linear-gradient(to right bottom, #fdca40 0%, #df2935 50%, #3772ff 100%); */
+	overflow: hidden;
+}
+
+#bg_img {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	/* background: linear-gradient(to right bottom, #fdca40 0%, #df2935 50%, #3772ff 100%); */
+	filter: saturate(300%) blur(100px) ;
+    background-size: 200% 200%;
+	overflow: hidden;
+	/* -webkit-animation: Animation 50s ease infinite;
+    -moz-animation: Animation 50s ease infinite;
+    animation: Animation 50s ease infinite; */
+	z-index: -1;
+}
+
+@-webkit-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes Animation { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+
+
+a {
+	color: black;
+}
+
+* {
+	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.class_container {
+	margin: 1.5rem;
+	padding: 1.5rem;
+	border-radius: .5rem;
+	background-color: white;
+	/* box-shadow: 15px 15px 20px rgba(255, 255, 255, .3), 
+            -15px -15px 20px rgba(0, 0, 0, 0.04); */
+	box-shadow: 0px 0px 15px 5px  rgba(0, 0, 0, 0.05);
+	text-align: left;
+	position: relative;
+	z-index: 2;
+}
+
+.titles p{
+	opacity: 0.5;
+	font-size: 100px;	
+}
+
+#main-content {
+	height: calc(100vh - 1rem);
+	width: calc(100vw - 1rem);
+	z-index: 1;
+	background-color: #fffffffd;	
+	position: absolute;
+	overflow: hidden;
+	top: .5rem;
+	left: .5rem;
+	display: grid;
+	grid-template-columns: repeat(3, 33.33%);
+	grid-template-areas: 
+	"quicklinks school image_div";
+	justify-items: center;
+	z-index: 1;
+}
+
+
+#image {
+	max-height: 80vh; 
+	width: auto; 
+	height: auto; 
+	max-width: 90%;
+	margin: 2rem;
+	border-radius: .2rem;
+	box-shadow: 0px 0px 15px 5px  rgba(0, 0, 0, 0.301);
+	/* box-shadow: 15px 15px 20px rgba(255, 255, 255, .3),  */
+            /* -15px -15px 20px rgba(0, 0, 0, 0.04); */
+	z-index: 1;
+}

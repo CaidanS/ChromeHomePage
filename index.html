@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+</head>
+<script>
+	
+	function update_local_storage(task_name, value){
+		console.log("task_name:", task_name);
+		console.log("checked?", value);
+		localStorage.setItem(task_name, value);
+	}
+	function add_task_to_display (task_name, value){
+		tasks_container.insertAdjacentHTML('afterBegin', '<div><input type="checkbox" style="margin-right: .5rem;" onchange="update_local_storage(this.parentNode.textContent, this.checked)" value =' + value + '>' + task_name + '<br></div>');
+		tasks_container = document.getElementById("task_container");
+	}
+	function onload_local_storage(){
+		tasks_container = document.getElementById("task_container");
+		num_tasks = localStorage.length;
+		for (k = 0; k < num_tasks; k ++){
+			if (localStorage.getItem(localStorage.key(k)) === 'false'){
+				add_task_to_display (localStorage.key(k), localStorage.getItem(localStorage.key(k)))
+			}	
+			console.log(localStorage.key(k), localStorage.getItem(localStorage.key(k)))
+		}
+	}	
+</script>
+<body>
+	<div id="bg_img"></div>
+	<div id="main-content">
+		<div id="quicklinks" style="width: 100%;">			
+			<div class="class_container" >					
+				<div id="task_container"></div>
+				<input type="text" style="margin-top: .5rem; width: auto%;" placeholder="+ new todo or /clear" onchange="if(this.value == '/clear'){localStorage.clear()} else {update_local_storage(this.value, false);  add_task_to_display (this.value, false);} this.value = '';">
+				<script>
+					onload_local_storage();
+				</script>
+			</div>						
+			<div class="class_container">								
+				<strong> QUICK LINKS </strong><br> <br>
+
+					<a href="https://trello.com/">Trello</a><br>				
+					<a href="https://drive.google.com/drive/u/0/my-drive">Google Drive</a><br>
+					<a href="https://letterboxd.com/">Letterboxd</a><br>
+					<a href="https://canvas.oregonstate.edu/">Canvas</a><br>
+					 <a href="https://www.strava.com/dashboard">Strava </a><br>
+					 <a href="https://chess.com">chess.com</a><br>
+					 <a href="https://undesign.learn.uno/">undesign</a><br>
+			</div>
+			<!-- <div class="titles"> <p>PROJECTS</p> </div> -->			
+			<div class="class_container">				
+				<strong> Reading List </strong><br> <br>
+				<a href="https://sns-herning.com/">SNS Herning</a><br>
+				<a href="https://retrosuperfuture.com/">RSF</a><br>
+				<a href="https://row.oneblockdown.it/">OBD</a><br>
+				<a href="https://www.andwander.com/">AndWander</a><br>
+				<!-- <a href="https://www.nytimes.com/">NYT</a><br>
+				<a href="https://www.mtgstocks.com/news">MTGStocks</a><br>
+				<a href="https://www.mcsweeneys.net/">McSweeny's</a><br> -->
+				
+			</div>
+			
+		</div>
+		<div id="school" style="width: 100%; ">
+			<div class="class_container">
+				<strong> PHYSICS </strong><br> <br>
+				Canvas <br>
+				TopHat <br>
+				Lab <br>
+				Studio <br>
+			</div>
+			<div class="class_container">
+				<strong> MATH </strong><br> <br>
+				Canvas
+			</div>
+			<div class="class_container">
+				<strong> PHILOSOPHY </strong><br> <br>
+				Canvas
+			</div>
+			<div class="class_container">
+				<strong> MODELING </strong><br> <br>
+				Canvas
+			</div>
+		</div>
+		
+		<div id="image_div" style="text-align: center;"> 
+			<a id="image_link"><img id="image"></a>
+			<script type="text/javascript" defer>
+				post_index = Math.floor(Math.random() * (304001 - 1 + 1)) + 1				
+				document.getElementById('image').src = 'https://archillect.mhsattarian.workers.dev/'+ post_index +'/img';
+				document.getElementById('image_link').href = "https://www.google.com/searchbyimage?&image_url="+"archillect.mhsattarian.workers.dev/"+ post_index +"/img";
+				// document.getElementById('subtitle').innerHTML = post_index;
+				document.getElementById('bg_img').style.backgroundImage = 'url(https://archillect.mhsattarian.workers.dev/'+ post_index +'/img';
+		
+			</script>
+		</div>
+</div>
+
+</body>
