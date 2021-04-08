@@ -9,3 +9,5 @@ __some pretty screenshots:__
 
 ![img1](https://i.imgur.com/vAXIi2C.png)
 ![img2](https://i.imgur.com/PHfJvme.png)
+![img3](https://i.imgur.com/WYKn6Ae.png)
+![img4](https://i.imgur.com/tJ5tpoj.png)
